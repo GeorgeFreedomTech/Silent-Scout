@@ -114,18 +114,15 @@ The process involved:
 ## ⚙️ Setup and running
 Unlike standard web apps, **Silent Scout** requires a coordinated setup between hardware and software.
 
+**Phase 1: Environment & Repository**
+Before deploying to hardware, prepare your local workstation:
+1.1. Clone the Repository:
+```bash
+git clone https://github.com/GeorgeFreedomTech/silent-scout.git
+cd silent-scout
+```
 
-**Phase 1: Field Unit (Agent)**
-* **Hardware:** An ESP32 development board.
-
-* **Firmware:** Flash MicroPython (v1.20+) to the device.
-
-* **Deployment:** Use Thonny or mpremote to upload the contents of the scout-agent/ folder to the ESP32.
-
-* **Operation:** Power the device. Use the onboard button to trigger a "Tri-Scan". Data is saved to a csv file.
-
-**Phase 2: Command Center (HQ)**
-1. **Environment:** Create a virtual environment and install dependencies:
+1.2. Set Up Python Environment:
 ```bash
 python -m venv venv
     # On Windows: venv\Scripts\activate
@@ -134,18 +131,30 @@ python -m venv venv
 pip install -r requirements.txt
 ```
 
-2. **Clone the Repository:**
-    ```bash
-    git clone https://github.com/GeorgeFreedomTech/silent-scout.git
-    cd silent-scout
-    ```
+**Phase 2: Field Unit Deployment (Agent)**
+Deploy the reconnaissance firmware to your ESP32:
 
-3. **Data Ingest:** Place your csv file from the Agent into data/inbox/ and run:
+* **Hardware:** Any ESP32 development board.
+
+* **Firmware:** Ensure MicroPython (v1.20+) is flashed to the device.
+
+* **Upload:** Use Thonny or mpremote to upload the entire contents of the scout-agent/ folder to the ESP32 root.
+
+* **Operation:** Power the device. Use the onboard BOOT button to trigger a scan. Results are logged to scout_vault.csv on the device's flash memory.
+
+**Phase 3: Intelligence Processing (HQ)**
+
+3. **Data Ingest:**
+Transfer and analyze the captured data:
+
+3.1. Data Ingest: Copy csv from the ESP32 to scout-hq/data/inbox/ and run the ETL script:
 ```bash
 python ingest.py
 ```
+This populates the SQLite database with your field observations.
 
-4. **Launch Dashboard:**
+3.2 **Launch Dashboard:**
+Start the command center to visualize the results:
 ```bash
 streamlit run app.py
 ```
