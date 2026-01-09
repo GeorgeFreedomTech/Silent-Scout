@@ -1,39 +1,41 @@
 # Silent-Scout
 
 ### **By George Freedom**
-A dual-component surveillance system designed for radio frequency reconnaissance, combining an **ESP32 Edge Agent** with a sophisticated **Streamlit Command Center (HQ)**.
+Silent Scout is a low-profile, passive WiFi reconnaissance system designed for **Digital Resilience and Field Situational Awareness**.
 
-This project demonstrates a complete **Hardware-to-Intelligence pipeline**: capturing raw 802.11 signals in the field, managing a local data vault, and performing tactical analysis to identify security risks and infrastructure patterns.
+Born from a philosophy of Tactical Minimalism, it rejects "fragile efficiency" and automated cloud dependencies. Instead, it focuses on a decoupled "Agent-HQ" architecture: an expendable, disconnected field sensor (Agent) and a centralized analytical dashboard (HQ).
 
-It serves as a professional blueprint for **IoT & Data Engineering**, of an embedded hardware sensing and high-level analytical visualization using a modern, AI-augmented workflow.
+This project is a practical application of **Cyber-EDC** principles—building tools that are simple, transparent, and resilient by design.
+
+Full Story:
 
 ### ⚙️ Core System Capabilities:
-It demonstrates key engineering concepts including:
+The system is engineered to demonstrate high-stakes data principles: maximizing intelligence while minimizing the digital attack surface.
 
-* **Edge Intelligence (Hardware):** Deploying a passive reconnaissance agent using MicroPython on ESP32 to sniff, filter, and log WiFi environments without network association.
+* **Passive Edge Reconnaissance (Agent):** Deploys a zero-footprint sniffer using MicroPython on ESP32. It operates in "Dead Metal" mode—performing rapid 802.11 signal captures without network association or credential storage, ensuring the hardware is tactically expendable.
 
-* **Data Vault & Ingestion (ETL):** A robust process for transferring "field logs" (CSV) into a centralized SQLite database, ensuring data integrity and historical persistence.
+* **Air-Gapped Data Pipeline (ETL):** Implements a deliberate "Manual Ingest" workflow. By eliminating automated cloud syncing (Flask/REST), the system removes the most common remote vulnerability point, ensuring a secure, physical chain of custody for all field data.
 
-* **Tactical Analysis Engine:** The core processing logic. Translating raw MAC addresses into vendor identities (OUI) and assigning risk tags based on signal patterns.
+* **Tactical Intelligence Engine (HQ):** A sophisticated post-processing layer in Python. It performs vendor identification (OUI mapping), security risk assessment, and automated threat tagging (CCTV, Mobile Hotspots, Stealth SSIDs).
 
-* **Visual Reconnaissance:** An interactive Streamlit dashboard featuring custom CSS, tactical legends, and Plotly charts for signal distribution and channel occupation analysis.
+* **High-Performance Visual Recon:** An interactive Streamlit dashboard utilizing a Single-load RAM Cache Strategy. This moves the entire SQLite vault into memory upon launch, providing instantaneous data exploration and signal distribution analysis.
 
-* **System Architecture:** A modular "Agent-HQ" design, separating low-level hardware constraints from high-level data science and visualization.
+* **RSSI Proximity Grading:** Translates raw decibel values into actionable distance estimations (Near/Medium/Far), allowing operators to visually prioritize targets based on physical proximity.
+
+* **Decoupled Architecture:** Strictly separates the Sensing (Field) from the Intelligence (Base). This separation of concerns ensures that a compromise in the field does not lead to a compromise of the central infrastructure.
 
 ---
 
 ## 🚀 Key Features
-* **Stealth Reconnaissance:** The ESP32 Agent operates in passive mode, logging SSIDs, BSSIDs, and RSSI levels without leaving a digital footprint.
+* **Passive Reconnaissance:** Sniffs 802.11 beacon frames without network association—leaving zero digital footprint.
 
-* **Mission-Based Tracking:** Organize data by Locality IDs and Timestamps, allowing for comparative analysis of the same location over time.
+* **Expendable Hardware:** Optimized for $5 ESP32 microcontrollers. If the hardware is lost, your home network credentials remain secure.
 
-* **Automated Threat Tagging:** Intelligent identification of mobile hotspots, surveillance infrastructure (CCTV), and hidden networks.
+* **Separation of Concerns:** Sensing happens in the field; Intelligence happens at HQ. No "smart" automation—total manual control.
 
-* **RSSI Proximity Grading:** Visual color-coding of signal strength to estimate physical distance to targets (Near/Medium/Far).
+* **Field-Tested Architecture:** Built to be wrapped in heat-shrink, powered by a Li-Po, and operated via a single tactile button.
 
-* **RF Environment Profiling:** Detailed breakdown of channel occupation to identify network congestion or potential interference.
-
-* **Hardware Interface:** Real-time visual feedback on the Agent via LED signaling for successful scans and system readiness.
+* **Tactical Analytics:** HQ Dashboard identifies surveillance infrastructure (CCTV), mobile hotspots, and hidden networks using a single-load RAM cache strategy.
 
 ---
 
