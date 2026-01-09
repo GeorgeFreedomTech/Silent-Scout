@@ -43,29 +43,34 @@ The system follows a decoupled architecture. The Agent is optimized for reliabil
 ### System Diagram
 
 ```mermaid
-graph LR;
-    subgraph "Field Unit (scout-agent)"
+graph TD;
+    subgraph "FIELD UNIT (scout-agent)"
         HW[ESP32 Hardware] --> MP[MicroPython Core]
-        MP -- Logging --> SD[Local CSV Vault]
+        MP -- "Passive Sniffing" --> HW
+        MP -- "Logging" --> SD[Local CSV Vault]
     end
 
-    SD -- Manual Ingest --> PC[Operator Workstation]
+    SD -- "Manual Data Transfer" --> PC[Operator Workstation]
 
-    subgraph "Command Center (scout-hq)"
-        PC --> Ingest[ingest.py]
-        Ingest -- ETL --> DB[(SQLite Database)]
-        DB --> Dashboard[app.py Orchestrator]
+    subgraph "COMMAND CENTER (scout-hq)"
+        PC --> Ingest[ingest.py ETL]
+        Ingest -- "Batch Insert" --> DB[(SQLite Database)]
         
-        subgraph "Intelligence Modules"
-            Dashboard --> Analyser[analyser.py]
-            Dashboard --> Viz[visualizer.py]
+        subgraph "Memory Intelligence Layer"
+            DB -- "load_database()" --> Cache[Master DataFrame /RAM/]
+            Cache -- "Pandas Filtering" --> UI[app.py Orchestrator]
+        end
+        
+        subgraph "Analysis Modules"
+            UI --> Analyser[analyser.py]
+            UI --> Viz[visualizer.py]
         end
     end
 
-    %% Flow
-    HW -- RSSI/SSID Sniffing --> MP;
-    Analyser -- OUI/Risk Mapping --> Dashboard;
-    Viz -- Render Components --> User[User Browser];
+    %% User Interaction
+    UI -- "Instant Rendering" --> User[User Browser]
+    Analyser -- "Threat Tags & OUI" --> UI
+    Viz -- "Plotly Components" --> UI
 ```
 
 ## File Structure
