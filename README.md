@@ -1,4 +1,4 @@
-# Silent-Scout
+# Silent Scout
 
 ### **By George Freedom**
 Silent Scout is a low-profile, passive WiFi reconnaissance system designed for **Digital Resilience and Field Situational Awareness**.
@@ -7,7 +7,7 @@ Born from a philosophy of Tactical Minimalism, it rejects "fragile efficiency" a
 
 This project is a practical application of **Cyber-EDC** principles—building tools that are simple, transparent, and resilient by design.
 
-Full Story:
+Full Story: https://georgefreedom.com/the-silent-scout-minimalism-as-a-weapon-of-digital-resilience/
 
 ### ⚙️ Core System Capabilities:
 The system is engineered to demonstrate high-stakes data principles: maximizing intelligence while minimizing the digital attack surface.
