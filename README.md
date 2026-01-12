@@ -9,7 +9,6 @@ This project is a practical application of **Cyber-EDC** principles—building t
 
 Full Story: https://georgefreedom.com/the-silent-scout-minimalism-as-a-weapon-of-digital-resilience/
 
----
 
 ## 🚀 Key Features
 * **Passive Edge Reconnaissance:** Operating in "Dead Metal" mode, the sniffer captures 802.11 signals without network association or credential storage. This ensures a zero-footprint operation with no digital signature left behind.
@@ -19,6 +18,7 @@ Full Story: https://georgefreedom.com/the-silent-scout-minimalism-as-a-weapon-of
 * **Tactical Expendability:** Optimized for $5 ESP32 microcontrollers. In the event of hardware loss or compromise, your primary infrastructure and network credentials remain completely isolated and secure.
 
 * **Absolute Control:** No "smart" automation or hidden background processes. The operator maintains total manual control over the data flow from sensing in the field to intelligence analysis at HQ.
+
 
 ## ⚙️ System Architecture
 The system follows a decoupled architecture. The Agent is optimized for reliability and power efficiency in the field, while the HQ is designed for deep data exploration and tactical decision-making.
@@ -39,7 +39,6 @@ A sophisticated Python and Streamlit-powered dashboard for instantaneous post-pr
 
 * **RSSI Proximity Grading:** Translates raw decibel values into actionable distance tiers (Near/Medium/Far), allowing operators to prioritize targets based on physical proximity.
 
----
 
 ### System Diagram
 
