@@ -10,6 +10,14 @@ This project is a practical application of **Cyber-EDC** principles—building t
 Full Story: https://georgefreedom.com/the-silent-scout-minimalism-as-a-weapon-of-digital-resilience/
 
 
+### 🌐 Live Intelligence HQ
+Experience the analytical engine in action without setting up the hardware.
+
+* **Live Dashboard:** [Silent Scout](https://silent-scout.streamlit.app/)
+
+* **Demo Context:** The hosted application is pre-loaded with mock reconnaissance data to demonstrate threat tagging, OUI mapping, and signal proximity analysis.
+
+
 ## 🚀 Key Features
 * **Passive Edge Reconnaissance:** Operating in "Dead Metal" mode, the sniffer captures 802.11 signals without network association or credential storage. This ensures a zero-footprint operation with no digital signature left behind.
 
