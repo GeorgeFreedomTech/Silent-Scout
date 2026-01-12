@@ -9,38 +9,37 @@ This project is a practical application of **Cyber-EDC** principles—building t
 
 Full Story: https://georgefreedom.com/the-silent-scout-minimalism-as-a-weapon-of-digital-resilience/
 
-### ⚙️ Core System Capabilities:
-The system is engineered to demonstrate high-stakes data principles: maximizing intelligence while minimizing the digital attack surface.
-
-* **Passive Edge Reconnaissance (Agent):** Deploys a zero-footprint sniffer using MicroPython on ESP32. It operates in "Dead Metal" mode—performing rapid 802.11 signal captures without network association or credential storage, ensuring the hardware is tactically expendable.
-
-* **Air-Gapped Data Pipeline (ETL):** Implements a deliberate "Manual Ingest" workflow. By eliminating automated cloud syncing (Flask/REST), the system removes the most common remote vulnerability point, ensuring a secure, physical chain of custody for all field data.
-
-* **Tactical Intelligence Engine (HQ):** A sophisticated post-processing layer in Python. It performs vendor identification (OUI mapping), security risk assessment, and automated threat tagging (CCTV, Mobile Hotspots, Stealth SSIDs).
-
-* **High-Performance Visual Recon:** An interactive Streamlit dashboard utilizing a Single-load RAM Cache Strategy. This moves the entire SQLite vault into memory upon launch, providing instantaneous data exploration and signal distribution analysis.
-
-* **RSSI Proximity Grading:** Translates raw decibel values into actionable distance estimations (Near/Medium/Far), allowing operators to visually prioritize targets based on physical proximity.
-
-* **Decoupled Architecture:** Strictly separates the Sensing (Field) from the Intelligence (Base). This separation of concerns ensures that a compromise in the field does not lead to a compromise of the central infrastructure.
-
 ---
 
 ## 🚀 Key Features
-* **Passive Reconnaissance:** Sniffs 802.11 beacon frames without network association—leaving zero digital footprint.
+* **Passive Edge Reconnaissance:** Operating in "Dead Metal" mode, the sniffer captures 802.11 signals without network association or credential storage. This ensures a zero-footprint operation with no digital signature left behind.
 
-* **Expendable Hardware:** Optimized for $5 ESP32 microcontrollers. If the hardware is lost, your home network credentials remain secure.
+* **Air-Gapped Data Pipeline:** A deliberate manual ingest workflow eliminates the need for automated cloud syncing (Flask/REST). By removing the most common remote vulnerability points, the system ensures a secure, physical chain of custody for all field data.
 
-* **Separation of Concerns:** Sensing happens in the field; Intelligence happens at HQ. No "smart" automation—total manual control.
+* **Tactical Expendability:** Optimized for $5 ESP32 microcontrollers. In the event of hardware loss or compromise, your primary infrastructure and network credentials remain completely isolated and secure.
 
-* **Field-Tested Architecture:** Built to be wrapped in heat-shrink, powered by a Li-Po, and operated via a single tactile button.
+* **Absolute Control:** No "smart" automation or hidden background processes. The operator maintains total manual control over the data flow from sensing in the field to intelligence analysis at HQ.
 
-* **Tactical Analytics:** HQ Dashboard identifies surveillance infrastructure (CCTV), mobile hotspots, and hidden networks using a single-load RAM cache strategy.
+## ⚙️ System Architecture
+The system follows a decoupled architecture. The Agent is optimized for reliability and power efficiency in the field, while the HQ is designed for deep data exploration and tactical decision-making.
+
+### 📡 Edge Agent (The Sensor)
+A lightweight MicroPython-based sniffer running on ESP32, engineered for high-stakes data collection.
+
+* **Field-Ready Build:** Designed to be powered by Li-Po batteries, protected by heat-shrink casing, and operated via a single tactile button.
+
+* **Passive Sniffing:** Captures 802.11 beacon frames silently without active transmission, ensuring maximum stealth during reconnaissance.
+
+### 💻 Intelligence HQ (The Base)
+A sophisticated Python and Streamlit-powered dashboard for instantaneous post-processing and tactical visualization.
+
+* **Single-load RAM Cache:** A high-performance strategy that moves the entire SQLite vault into memory upon launch for lag-free data exploration.
+
+* **Threat Tagging Engine:** Automatically identifies surveillance infrastructure (CCTV), mobile hotspots, and hidden networks through OUI mapping and heuristic analysis.
+
+* **RSSI Proximity Grading:** Translates raw decibel values into actionable distance tiers (Near/Medium/Far), allowing operators to prioritize targets based on physical proximity.
 
 ---
-
-## 🏗️ Project Architecture
-The system follows a decoupled architecture. The Agent is optimized for reliability and power efficiency in the field, while the HQ is designed for deep data exploration and tactical decision-making.
 
 ### System Diagram
 
