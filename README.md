@@ -95,6 +95,7 @@ silent-scout/
 │   ├── data/                   # Storage (Database & Static JSONs)
 │   └── modules/                # Analytical & Visual components
 │       ├── __init__.py
+│       ├── utils.py            # Core logic for data loading, caching, and common I/O helpers
 │       ├── db_manager.py       # SQLite operations & indexing
 │       ├── analyser.py         # Tactical analysis & OUI lookup
 │       └── visualizer.py       # UI rendering & Plotly charts
