@@ -100,6 +100,8 @@ silent-scout/
 │       ├── analyser.py         # Tactical analysis & OUI lookup
 │       └── visualizer.py       # UI rendering & Plotly charts
 │
+├── requirements.txt            # Python dependencies
+├── .gitignore                  # Files ignored by Git
 └── README.md                   # This file
 ```
 
