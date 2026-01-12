@@ -1,0 +1,62 @@
+{
+    "distance_legend": [
+        {"color": "#ff4b4b", "label": "Near (< 5m)"},
+        {"color": "#ffa500", "label": "Medium (5-20m)"},
+        {"color": "#28a745", "label": "Far (> 20m)"}
+    ],
+    "security_standards": {
+        "0": { "label": "🔓 OPEN", "desc": "Unencrypted (High risk of interception and spoofing)" },
+        "1": { "label": "🔒 WEP", "desc": "Critically deprecated (Decryptable in seconds)" },
+        "2": { "label": "🔒 WPA-PSK", "desc": "Legacy standard (Susceptible to modern exploits)" },
+        "3": { "label": "🔒 WPA2-PSK", "desc": "Current standard (Secure with a strong passphrase)" },
+        "4": { "label": "🔒 WPA/WPA2", "desc": "Mixed mode (Backward compatibility for legacy HW)" },
+        "5": { "label": "🔒 WPA2/WPA3", "desc": "Modern transition mode (High-level protection)" },
+        "6": { "label": "🔒 WPA3", "desc": "Advanced standard (Resistant to offline dictionary attacks)" }
+    },
+    "templates": {
+        "distance_wrapper": "<div class='legend-container'>{items}</div>",
+        "distance_item": "<div class='legend-item'><div class='legend-box' style='background:{color};'></div><span class='sec-desc'>{label}</span></div>",
+        "security_grid_wrapper": "<div class='security-grid'>{items}</div>",
+        "security_item": "<div class='sec-label'>{label}</div><div class='sec-desc'>{desc}</div>",
+        "footer_wrapper": "<div class='footer'>{content}</div>",
+        "footer_link": "<a href='{url}' target='_blank' class='footer-link'>{icon} {label}</a>"
+    },
+    "tactical_note": {
+        "title": "ℹ️ Tactical Interpretation: Signal vs. Environment",
+        "content": "**Signal Decay Rate:**\nWiFi signal strength follows a **logarithmic decay**. The most significant loss of energy occurs within the first **5 meters** from the source (Red Zone).\n\n**Environmental Impact:**\n* **Open Terrain (Outdoors):** In LOS (Line of Sight), a **-75 dBm** value can represent a source up to **50–100 meters** away.\n* **Confined Spaces (Indoors):** Standard brick walls typically introduce an attenuation of **3–5 dB**.\n* **Structural Barriers:** Reinforced concrete, metal drywall studs, or metallized glass drastically dampen the signal."
+    },
+    "footer": {
+        "text": "Silent Scout Dashboard | Tactical Reconnaissance Intel by George Freedom",
+        "links": [
+            {"label": "LinkedIn", "url": "https://www.linkedin.com/in/georgefreedom/", "icon": "🔗"},
+            {"label": "Schedule a Call", "url": "https://cal.com/georgefreedom", "icon": "🗓️"}
+        ]
+    },
+    "analysis_rules": {
+        "threat_tags": {
+            "mobile_hotspot": {
+                "keywords": ["iphone", "hotspot", "galaxy", "pixel", "note"],
+                "label": "📱 Mobile Hotspot",
+                "source": "ssid"
+            },
+            "surveillance": {
+                "keywords": ["camera", "hikvision", "dahua"],
+                "label": "📷 Surveillance",
+                "source": "vendor"
+            },
+            "stealth": {
+                "field": "hidden",
+                "value": 1,
+                "label": "👻 Hidden SSID",
+                "source": "flag"
+            },
+            "unsecured": {
+                "field": "security",
+                "value": 0,
+                "label": "🔓 Open Network",
+                "source": "flag"
+            }
+        },
+        "default_label": "Stationary AP"
+    }
+}

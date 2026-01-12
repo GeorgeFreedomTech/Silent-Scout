@@ -1,0 +1,96 @@
+/* * Silent Scout HQ - Tactical UI Stylesheet
+ * Defines the visual identity for the HQ dashboard, legends, and feedback components.
+ */
+
+:root {
+    --border-color: #e6e9ef;
+    --label-bg: #f8f9fa;
+    --footer-text: #666666;
+    --link-color: #0077b5;
+    --link-hover: #004182;
+    --tactical-font: 'ui-monospace', 'Cascadia Code', 'Source Code Pro', Menlo, Monaco, Consolas, monospace;
+}
+
+/* --- Legend Components --- */
+
+.legend-container {
+    display: flex; 
+    gap: 20px; 
+    align-items: center; 
+    margin-bottom: 15px; 
+    padding-bottom: 10px; 
+    border-bottom: 2px solid var(--border-color);
+}
+
+.legend-item {
+    display: flex; 
+    align-items: center; 
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.legend-box {
+    width: 16px; 
+    height: 16px; 
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+/* --- Security Standards Grid --- */
+
+.security-grid {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 6px 15px;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    margin: 10px 0;
+}
+
+.sec-label {
+    font-family: var(--tactical-font);
+    font-weight: bold;
+    background: var(--label-bg);
+    color: #1f1f1f;
+    padding: 3px 8px;
+    border-radius: 4px;
+    border-left: 4px solid #0077b5;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+}
+
+.sec-desc {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--footer-text);
+    display: flex;
+    align-items: center;
+}
+
+/* --- Tactical Footer --- */
+
+.footer {
+    margin-top: 60px;
+    padding-top: 25px;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    color: var(--footer-text);
+    font-size: 0.85rem;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-link {
+    margin: 0 12px;
+    text-decoration: none !important;
+    color: var(--link-color) !important;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.footer-link:hover {
+    color: var(--link-hover) !important;
+    transform: translateY(-1px);
+}
