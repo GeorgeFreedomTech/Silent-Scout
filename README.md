@@ -7,7 +7,7 @@ Born from a philosophy of Tactical Minimalism, it rejects "fragile efficiency" a
 
 This project is a practical application of **Cyber-EDC** principles—building tools that are simple, transparent, and resilient by design.
 
-Full Story: https://georgefreedom.com/the-silent-scout-minimalism-as-a-weapon-of-digital-resilience/
+Full Story: https://georgefreedom.com/the-silent-scout-building-a-low-profile-digital-resilience-tool/
 
 
 ### 🌐 Live Intelligence HQ
@@ -20,6 +20,8 @@ Experience the analytical engine in action without setting up the hardware.
 
 ## 🚀 Key Features
 * **Passive Edge Reconnaissance:** Operating in "Dead Metal" mode, the sniffer captures 802.11 signals without network association or credential storage. This ensures a zero-footprint operation with no digital signature left behind.
+  
+* **2.4 GHz Focus:** Optimized for the "2.4 GHz" band to maximize signal penetration through physical obstacles (walls/foliage) and target long-range IoT/CCTV infrastructure. Leverages legacy fallback to detect mobile devices even when they are connected to 5 GHz networks.
 
 * **Air-Gapped Data Pipeline:** A deliberate manual ingest workflow eliminates the need for automated cloud syncing (Flask/REST). By removing the most common remote vulnerability points, the system ensures a secure, physical chain of custody for all field data.
 
